@@ -1,8 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+Vagrant.require_plugin "vagrant-reload"
 Vagrant.configure("2") do |config|
-  config.vm.box = "Win10MSEdge"
+  config.vm.box = "cybernel/MSEdgeWin10"
+  config.vm.box_version = "1.0"
 	config.vm.guest = :windows
   config.vm.communicator = ENV['communicator'] || "winrm"
 	config.winrm.username = "IEUser"
